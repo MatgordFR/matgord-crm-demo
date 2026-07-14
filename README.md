@@ -10,9 +10,9 @@
 ![Thèmes](https://img.shields.io/badge/th%C3%A8mes-clair_%2F_sombre-0f7d63?style=flat-square)
 ![Licence](https://img.shields.io/badge/licence-ISC-2f81f7?style=flat-square)
 
-[![▶ Ouvrir la démo](https://img.shields.io/badge/%E2%96%B6_Ouvrir_la_d%C3%A9mo-0f7d63?style=for-the-badge)](https://matgordfr.github.io/matgord-crm-demo/)
+[![▶ Ouvrir la démo](https://img.shields.io/badge/%E2%96%B6_Ouvrir_la_d%C3%A9mo-0f7d63?style=for-the-badge)](https://matgordfr.github.io/site-tableau-de-bord/)
 &nbsp;
-[![Voir le code](https://img.shields.io/badge/Voir_le_code-161b22?style=for-the-badge&logo=github)](https://github.com/MatgordFR/matgord-crm-demo)
+[![Voir le code](https://img.shields.io/badge/Voir_le_code-161b22?style=for-the-badge&logo=github)](https://github.com/MatgordFR/site-tableau-de-bord)
 
 <br>
 
