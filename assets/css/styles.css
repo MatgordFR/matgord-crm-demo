@@ -3,6 +3,10 @@
    Gros chiffres en serif (figures oldstyle = caractère ledger), données en sans
    à chiffres tabulaires (alignement). Look assumé clair, une seule direction. */
 
+/* Polices auto-hébergées (mêmes que le site perso de MatgordFR → cohérence de marque) */
+@font-face { font-family: "Fraunces"; src: url("../fonts/fraunces.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+@font-face { font-family: "Space Grotesk"; src: url("../fonts/space-grotesk.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+
 :root {
   --paper:      #F1F3F5;   /* fond, froid (pas cream) */
   --surface:    #FFFFFF;
@@ -20,8 +24,8 @@
   --down-wash:  #F7E9E7;
   --gold:       #B9892B;
 
-  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --font-ui: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
 
   --r: 10px;
   --shadow: 0 1px 2px rgba(22,32,46,.04), 0 8px 24px rgba(22,32,46,.05);

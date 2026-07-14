@@ -97,6 +97,34 @@
 
 @keyframes word { to { opacity: 1; transform: none; } }
 
+/* ---------- Icônes SVG (line) ---------- */
+.f-ic svg { width: 19px; height: 19px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Micro-interactions ---------- */
+.feature { position: relative; overflow: hidden; transition: transform .22s cubic-bezier(.2,.7,.2,1), border-color .22s, box-shadow .22s; }
+.feature::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform .26s cubic-bezier(.2,.7,.2,1); }
+.feature:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 38%, var(--hair)); }
+.feature:hover::before { transform: scaleY(1); }
+.feature .f-ic { transition: transform .22s ease; }
+.feature:hover .f-ic { transform: scale(1.08) rotate(-3deg); }
+.mcard { transition: transform .2s ease, border-color .2s; }
+.mcard:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 34%, var(--hair)); }
+.stat-big { transition: transform .2s ease; }
+.stats-band:hover .stat-big { opacity: .55; }
+.stats-band .stat-big:hover { opacity: 1; transform: translateY(-2px); }
+
+/* ---------- L'auteur ---------- */
+.author-card { display: flex; gap: 26px; align-items: flex-start; background: var(--surface); border: 1px solid var(--hair); border-radius: 18px; padding: 32px 34px; box-shadow: var(--shadow); }
+.author-mono { width: 66px; height: 66px; border-radius: 17px; flex: none; display: grid; place-items: center;
+  font-family: var(--font-display); font-size: 34px; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-ink)); }
+:root[data-theme="dark"] .author-mono { color: #08120D; }
+.author-name { font-family: var(--font-display); font-size: clamp(24px, 3vw, 30px); margin: 6px 0 12px; letter-spacing: -.01em; }
+.author-bio { color: var(--ink-soft); font-size: 16.5px; line-height: 1.6; max-width: 48em; }
+.author-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.author-links a { border: 1px solid var(--hair); border-radius: 8px; padding: 8px 14px; font-size: 14px; color: var(--ink); text-decoration: none; background: var(--surface-2); transition: border-color .2s, transform .15s, color .2s; }
+.author-links a:hover { border-color: var(--accent); color: var(--accent-ink); transform: translateY(-1px); }
+@media (max-width: 560px) { .author-card { flex-direction: column; gap: 18px; padding: 24px; } }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 40px; }
