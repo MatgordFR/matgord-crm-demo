@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MatgordCRM — démo (CRM + MRR)</title>
+  <meta name="description" content="Démo vitrine d'un CRM avec suivi du MRR, par MatgordFR. Données fictives, un projet 100% vanilla (aucune dépendance).">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Barre latérale -->
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" title="Retour à la présentation" style="text-decoration:none">
+        <span class="brand-mark">Matgord</span><span class="brand-tag">CRM</span>
+      </a>
+      <nav class="nav" id="nav">
+        <button class="nav-item is-active" data-v="dash"><span class="ic"></span> Tableau de bord</button>
+        <button class="nav-item" data-v="clients"><span class="ic"></span> Clients</button>
+        <button class="nav-item" data-v="deals"><span class="ic"></span> Deals</button>
+        <button class="nav-item" data-v="revenue"><span class="ic"></span> Revenus</button>
+        <button class="nav-item" data-v="forecast"><span class="ic"></span> Prévisions</button>
+      </nav>
+      <div class="account">
+        <div class="avatar" id="acctAv">M</div>
+        <div><b id="acctName">Matéo</b><small id="acctRole">MatgordFR · agence</small></div>
+      </div>
+    </aside>
+
+    <!-- Contenu -->
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+          <div class="eyebrow" id="pageEyebrow">vue d'ensemble</div>
+          <h1 id="pageTitle">Tableau de bord</h1>
+          <div class="sub" id="pageSub">Tes revenus récurrents, en un coup d'œil.</div>
+        </div>
+        <div class="topbar-right">
+          <div class="search"><input id="search" type="search" placeholder="Rechercher un client…" aria-label="Rechercher un client"></div>
+          <div class="segmented" id="period" role="group" aria-label="Période">
+            <button data-p="1">30 j</button>
+            <button data-p="3">90 j</button>
+            <button data-p="12" class="is-active">12 mois</button>
+          </div>
+          <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" title="Thème clair / sombre">☾</button>
+          <span class="badge-demo">Démo · données fictives</span>
+        </div>
+      </div>
+
+      <section class="view is-active" data-view="dash" id="view-dash"></section>
+      <section class="view" data-view="clients" id="view-clients"></section>
+      <section class="view" data-view="deals" id="view-deals"></section>
+      <section class="view" data-view="revenue" id="view-revenue"></section>
+      <section class="view" data-view="forecast" id="view-forecast"></section>
+
+      <footer class="footer">
+        MatgordCRM — projet démo par <b>MatgordFR</b> · <b>matgord.com</b> · toutes les données sont fictives.
+      </footer>
+    </main>
+  </div>
+
+  <!-- Fiche client (slide-over) -->
+  <div class="backdrop" id="backdrop"></div>
+  <aside class="panel" id="panel" aria-hidden="true" aria-label="Fiche client"></aside>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

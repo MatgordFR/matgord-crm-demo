@@ -3,70 +3,132 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MatgordCRM — démo (CRM + MRR)</title>
-  <meta name="description" content="Démo vitrine d'un CRM avec suivi du MRR, par MatgordFR. Données fictives, un projet 100% vanilla (aucune dépendance).">
+  <title>MatgordCRM — CRM + suivi du MRR (démo)</title>
+  <meta name="description" content="Démo d'un CRM avec analytics de MRR : clients, pipeline, waterfall, ARPU/LTV/Quick Ratio/NRR, projection. Zéro dépendance, vanilla, par MatgordFR.">
   <meta name="robots" content="index,follow">
+  <meta property="og:title" content="MatgordCRM — CRM + suivi du MRR (démo)">
+  <meta property="og:description" content="CRM de démo avec de vraies analytics de MRR. Zéro dépendance, tout en vanilla.">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/landing.css">
 </head>
 <body>
-  <div class="app">
-    <!-- Barre latérale -->
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <span class="brand-mark">Matgord</span><span class="brand-tag">CRM</span>
-      </div>
-      <nav class="nav" id="nav">
-        <button class="nav-item is-active" data-v="dash"><span class="ic"></span> Tableau de bord</button>
-        <button class="nav-item" data-v="clients"><span class="ic"></span> Clients</button>
-        <button class="nav-item" data-v="deals"><span class="ic"></span> Deals</button>
-        <button class="nav-item" data-v="revenue"><span class="ic"></span> Revenus</button>
-        <button class="nav-item" data-v="forecast"><span class="ic"></span> Prévisions</button>
-      </nav>
-      <div class="account">
-        <div class="avatar" id="acctAv">M</div>
-        <div><b id="acctName">Matéo</b><small id="acctRole">MatgordFR · agence</small></div>
-      </div>
-    </aside>
+  <nav class="lnav">
+    <div class="lnav-in">
+      <a class="lbrand" href="index.html"><b>Matgord</b><i>CRM</i></a>
+      <span class="spacer"></span>
+      <a class="nlink" href="#features">Fonctions</a>
+      <a class="nlink" href="#metriques">Métriques</a>
+      <a class="nlink" href="#capot">Sous le capot</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" title="Thème clair / sombre">☾</button>
+      <a class="cta-primary" href="app.html">Ouvrir la démo →</a>
+    </div>
+  </nav>
 
-    <!-- Contenu -->
-    <main class="main">
-      <div class="topbar">
-        <div>
-          <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
-          <div class="eyebrow" id="pageEyebrow">vue d'ensemble</div>
-          <h1 id="pageTitle">Tableau de bord</h1>
-          <div class="sub" id="pageSub">Tes revenus récurrents, en un coup d'œil.</div>
+  <div class="lp">
+    <!-- Hero -->
+    <header class="hero">
+      <div>
+        <div class="hero-eyebrow">démo · CRM + suivi du MRR</div>
+        <h1 class="hero-title">
+          <span class="word" style="animation-delay:.05s">Le</span>
+          <span class="word" style="animation-delay:.10s">revenu</span>
+          <span class="word" style="animation-delay:.15s">récurrent,</span><br>
+          <span class="word accent" style="animation-delay:.26s">lisible</span>
+          <span class="word accent" style="animation-delay:.31s">d'un</span>
+          <span class="word accent" style="animation-delay:.36s">coup</span>
+          <span class="word accent" style="animation-delay:.41s">d'œil.</span>
+        </h1>
+        <p class="hero-sub">Un CRM de démonstration : clients, pipeline, et de vraies analytics de MRR — waterfall, ARPU, LTV, churn, projection. Zéro dépendance, tout dessiné à la main en vanilla.</p>
+        <div class="hero-cta">
+          <a class="cta-primary" href="app.html">Ouvrir la démo →</a>
+          <a class="cta-ghost" href="https://github.com/MatgordFR/matgord-crm-demo" target="_blank" rel="noopener">Voir le code</a>
         </div>
-        <div class="topbar-right">
-          <div class="search"><input id="search" type="search" placeholder="Rechercher un client…" aria-label="Rechercher un client"></div>
-          <div class="segmented" id="period" role="group" aria-label="Période">
-            <button data-p="1">30 j</button>
-            <button data-p="3">90 j</button>
-            <button data-p="12" class="is-active">12 mois</button>
-          </div>
-          <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" title="Thème clair / sombre">☾</button>
-          <span class="badge-demo">Démo · données fictives</span>
-        </div>
+        <div class="hero-note">Données 100 % fictives · réalisé par <b>MatgordFR</b></div>
       </div>
 
-      <section class="view is-active" data-view="dash" id="view-dash"></section>
-      <section class="view" data-view="clients" id="view-clients"></section>
-      <section class="view" data-view="deals" id="view-deals"></section>
-      <section class="view" data-view="revenue" id="view-revenue"></section>
-      <section class="view" data-view="forecast" id="view-forecast"></section>
+      <div class="hero-viz">
+        <div class="hero-card">
+          <div class="hc-label">MRR — revenu mensuel récurrent</div>
+          <div class="hc-val num">1 380 €</div>
+          <div class="hc-delta">▲ 15,0 % ce mois</div>
+          <svg class="hero-svg" viewBox="0 0 400 150" preserveAspectRatio="none" aria-hidden="true">
+            <path class="hs-fill" d="M8 128 C 70 120, 110 104, 150 96 S 235 66, 285 54 S 360 26, 392 18 L392 150 L8 150 Z"/>
+            <path class="hs-line" d="M8 128 C 70 120, 110 104, 150 96 S 235 66, 285 54 S 360 26, 392 18"/>
+            <circle class="hs-dot" cx="392" cy="18" r="4"/>
+          </svg>
+        </div>
+        <div class="chip-float c1"><b class="num">102,5 %</b>rétention (NRR)</div>
+        <div class="chip-float c2"><b class="up">▲ 15 %</b>MRR ce mois</div>
+      </div>
+    </header>
 
-      <footer class="footer">
-        MatgordCRM — projet démo par <b>MatgordFR</b> · <b>matgord.com</b> · toutes les données sont fictives.
-      </footer>
-    </main>
+    <!-- Fonctions -->
+    <section class="section" id="features">
+      <div class="reveal"><div class="sec-eyebrow">ce que ça montre</div>
+        <h2 class="sec-title">Cinq vues, un seul objectif : voir clair.</h2>
+        <p class="sec-lead">Du portefeuille client jusqu'aux métriques qu'un investisseur regarde — sans quitter la page.</p></div>
+      <div class="features">
+        <div class="feature reveal"><div class="f-ic">◱</div><h3>Tableau de bord</h3><p>KPIs (MRR, ARR, churn), courbe de MRR avec tooltip au survol, top clients, activité.</p></div>
+        <div class="feature reveal d1"><div class="f-ic">☰</div><h3>Clients</h3><p>Table triable, recherche instantanée, et une fiche client qui glisse au clic.</p></div>
+        <div class="feature reveal d2"><div class="f-ic">▤</div><h3>Deals</h3><p>Pipeline en kanban, du premier lead jusqu'au deal gagné ou perdu.</p></div>
+        <div class="feature reveal"><div class="f-ic">◔</div><h3>Revenus</h3><p>MRR décomposé, waterfall new/expansion/contraction/churn, métriques SaaS.</p></div>
+        <div class="feature reveal d1"><div class="f-ic">◹</div><h3>Prévisions</h3><p>Projection du MRR sur 6 mois selon la tendance, hypothèses affichées.</p></div>
+        <div class="feature reveal d2"><div class="f-ic">◐</div><h3>Thèmes & détails</h3><p>Clair et sombre, animations, responsive, accessible au clavier.</p></div>
+      </div>
+    </section>
+
+    <!-- Métriques -->
+    <section class="section" id="metriques">
+      <div class="reveal"><div class="sec-eyebrow">les chiffres qui comptent</div>
+        <h2 class="sec-title">Les métriques que regarde un investisseur.</h2>
+        <p class="sec-lead">Pas juste un total de revenus — les indicateurs qui disent si la machine tient.</p></div>
+      <div class="mstrip">
+        <div class="mcard reveal"><div class="m-k">ARPU</div><div class="m-n">Revenu moyen par client</div><div class="m-d">Le MRR rapporté au nombre de clients actifs.</div></div>
+        <div class="mcard reveal d1"><div class="m-k">LTV</div><div class="m-n">Valeur vie client</div><div class="m-d">Combien rapporte un client sur sa durée de vie estimée.</div></div>
+        <div class="mcard reveal d2"><div class="m-k">Quick Ratio</div><div class="m-n">Vitesse de croissance</div><div class="m-d">Ce qui rentre (new+expansion) sur ce qui sort (churn).</div></div>
+        <div class="mcard reveal d3"><div class="m-k">NRR</div><div class="m-n">Rétention nette</div><div class="m-d">Le revenu retenu sur la base existante, churn déduit.</div></div>
+      </div>
+    </section>
+
+    <!-- Sous le capot -->
+    <section class="section" id="capot">
+      <div class="reveal"><div class="sec-eyebrow">sous le capot</div>
+        <h2 class="sec-title">Zéro dépendance. Que du vanilla.</h2>
+        <p class="sec-lead">Pas de framework, pas de librairie de graphes, pas de CDN. Les courbes, barres et le waterfall sont dessinés à la main en SVG.</p></div>
+      <div class="tech reveal">
+        <span><b>0</b> dépendance</span><span><b>0</b> CDN</span><span>SVG <b>dessiné à la main</b></span>
+        <span>thèmes <b>clair / sombre</b></span><span>animations <b>+ reduced-motion</b></span>
+        <span><b>responsive</b></span><span>accessible <b>clavier</b></span><span>~<b>40 Ko</b> au total</span>
+      </div>
+    </section>
+
+    <!-- Chiffres -->
+    <section class="section">
+      <div class="stats-band">
+        <div class="stat-big"><div class="s-num num" data-to="0">0</div><div class="s-lab">dépendance externe</div></div>
+        <div class="stat-big"><div class="s-num num" data-to="5">0</div><div class="s-lab">vues interactives</div></div>
+        <div class="stat-big"><div class="s-num num" data-to="4">0</div><div class="s-lab">métriques SaaS</div></div>
+        <div class="stat-big"><div class="s-num num" data-to="100" data-suffix=" %">0</div><div class="s-lab">vanilla JS</div></div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="cta-final reveal">
+      <h2>Ouvre la démo.</h2>
+      <p>Clique, trie, filtre, change de thème, survole la courbe. Tout tourne dans ton navigateur.</p>
+      <div class="row">
+        <a class="cta-primary" href="app.html">Ouvrir la démo →</a>
+        <a class="cta-ghost" href="https://github.com/MatgordFR/matgord-crm-demo" target="_blank" rel="noopener">Voir le code sur GitHub</a>
+      </div>
+    </section>
+
+    <footer class="lfooter">
+      <span>MatgordCRM — projet démo · toutes les données sont <b>fictives</b>.</span>
+      <span>Réalisé par <b>MatgordFR</b> · <a href="https://matgord.com" target="_blank" rel="noopener">matgord.com</a></span>
+    </footer>
   </div>
 
-  <!-- Fiche client (slide-over) -->
-  <div class="backdrop" id="backdrop"></div>
-  <aside class="panel" id="panel" aria-hidden="true" aria-label="Fiche client"></aside>
-
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/charts.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/landing.js"></script>
 </body>
 </html>

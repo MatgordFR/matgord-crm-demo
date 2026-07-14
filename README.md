@@ -25,11 +25,14 @@ Démo vitrine d'un **CRM avec analytics de MRR** (revenu mensuel récurrent), pe
 ## Structure
 
 ```
-index.html                → markup
+index.html                → page de présentation (landing animée)
+app.html                  → l'application CRM (la démo interactive)
 assets/css/styles.css     → design system + thèmes clair/sombre
+assets/css/landing.css    → styles de la présentation
 assets/js/data.js         → jeu de données fictif (source unique)
 assets/js/charts.js       → graphiques SVG (aire, barres, waterfall, sparkline)
 assets/js/app.js          → vues, interactivité, métriques, thème
+assets/js/landing.js      → présentation : reveals au scroll + compteurs
 ```
 
 ## Lancer en local
